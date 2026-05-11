@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>FitGuideAI · Design</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<style>
+  :root { color-scheme: dark; }
+  html, body {
+    margin: 0;
+    background: #05172E;
+    color: #F5F5F5;
+    font-family: var(--font-sans, -apple-system, system-ui, sans-serif);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .page { max-width: 920px; margin: 0 auto; padding: 80px 48px 120px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: #9BB5D6; margin-bottom: 12px;
+  }
+  h1 {
+    font-family: var(--font-display, "Bebas Neue", Impact, sans-serif);
+    font-weight: 400; font-size: 72px; line-height: 1.02;
+    letter-spacing: 0.5px; margin: 0 0 16px;
+  }
+  .deck { font-size: 19px; color: #C7D5E8; margin-bottom: 56px; max-width: 720px; }
+  h2 {
+    font-family: var(--font-display, "Bebas Neue", Impact, sans-serif);
+    font-weight: 400; font-size: 32px; letter-spacing: 0.5px;
+    margin: 56px 0 16px; padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+  }
+  h2 .num { color: #E8FF47; display: inline-block; width: 1.4em; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 0 0 24px; }
+  a.card {
+    display: block;
+    background: #14406B;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 22px 24px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  a.card:hover { border-color: #E8FF47; transform: translateY(-1px); }
+  a.card h3 {
+    margin: 0 0 6px;
+    font-size: 17px; font-weight: 600; color: #F5F5F5;
+  }
+  a.card .meta {
+    font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase;
+    color: #E8FF47; margin-bottom: 8px;
+  }
+  a.card p {
+    margin: 0; color: #C7D5E8; font-size: 14px;
+  }
+  a.card.muted .meta { color: #9BB5D6; }
+  a.card.muted:hover { border-color: #9BB5D6; }
+  .footnote { font-size: 13px; color: #6A8BAA; margin-top: 64px; }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 13.5px;
+         background: rgba(255,255,255,0.07); padding: 1px 6px; border-radius: 4px; color: #E8FF47; }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <div class="eyebrow">FitGuideAI · Design Artifacts</div>
+  <h1>Design System &amp; Specs</h1>
+  <p class="deck">Versioned home for FitGuideAI's design artifacts. Specs are signed-off decisions; inventories are live reference; mockups are exploration.</p>
+
+  <h2><span class="num">1</span>Active specs</h2>
+  <div class="grid">
+    <a class="card" href="buttons-v2-spec.html">
+      <div class="meta">v0.2 · ready for build</div>
+      <h3>Buttons v2 — Consolidation</h3>
+      <p>Slim button inventory from 25+ components to 13. Phase 1 deliverable: spec, v1→v2 mapping, migration plan.</p>
+    </a>
+  </div>
+
+  <h2><span class="num">2</span>Inventories</h2>
+  <div class="grid">
+    <a class="card" href="button_review/Buttons.html">
+      <div class="meta">Interactive canvas</div>
+      <h3>Button inventory (v1)</h3>
+      <p>Every button currently in the app, on a pan/zoom canvas. Grouped by role with state variants for each.</p>
+    </a>
+  </div>
+
+  <h2><span class="num">3</span>Mockups &amp; references</h2>
+  <div class="grid">
+    <a class="card muted" href="ui_kits/ios_app/index.html">
+      <div class="meta">iOS lo-fi</div>
+      <h3>App tab mockups</h3>
+      <p>Workout, Programs, Progress, Profile, Active Workout — reference layouts mirroring the shipped app.</p>
+    </a>
+    <a class="card muted" href="README.md">
+      <div class="meta">Reference</div>
+      <h3>Design system overview</h3>
+      <p>Token reference, component index, and DS philosophy. Lives in the iOS repo as Swift; mirrored here as documentation.</p>
+    </a>
+  </div>
+
+  <p class="footnote">Source: <code>github.com/atabhatti/FitGuideAI2-design</code> · Mirrors the design system shipped in <code>FitGuideAI2/Packages/DesignSystem/</code>.</p>
+
+</main>
+</body>
+</html>
