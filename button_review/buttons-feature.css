@@ -1,0 +1,150 @@
+/* Feature-local button styles */
+
+/* ProfileRowButton — row with icon-tile + label + value + chevron */
+.frb {
+  width: 100%;
+  padding: 14px var(--sp-md);
+  display: flex; align-items: center; gap: var(--sp-sm);
+  background: transparent; color: var(--text-primary);
+  border-radius: var(--r-sm);
+}
+.frb__tile {
+  width: 28px; height: 28px;
+  border-radius: var(--r-sm);
+  background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+  color: var(--text-secondary);
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 28px;
+}
+.frb__text { display: flex; flex-direction: column; align-items: flex-start; }
+.frb__label { font-size: 15px; color: var(--text-primary); }
+.frb__sub { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+.frb__val { font-size: 13px; color: var(--text-secondary); }
+
+/* DeleteAccountConfirmButton — RR12 destructive, two states */
+.dac {
+  width: 100%; height: 50px;
+  border-radius: var(--r-md);
+  font-size: 16px; font-weight: 600;
+}
+.dac--on { background: var(--destructive); color: var(--text-on-destructive); }
+.dac--off { background: var(--surface-card); color: var(--text-secondary); }
+
+/* GuideMeButton — green capsule, AI-coach affordance */
+.gmb {
+  padding: 10px var(--sp-md);
+  border-radius: var(--r-pill);
+  background: var(--success-subtle);
+  border: 1px solid color-mix(in srgb, var(--success) 30%, transparent);
+  color: var(--success);
+  font-size: 14px; font-weight: 500;
+}
+
+/* BugReportSubmitButton — 50pt RR16 accent */
+.brs {
+  width: 100%; height: 50px;
+  border-radius: var(--r-lg);
+  background: var(--accent); color: var(--text-on-accent);
+  font-size: 16px; font-weight: 600;
+}
+.brs--off { background: var(--surface-card); color: var(--text-secondary); }
+.brs--off:disabled { opacity: 1; }
+
+/* BugReportThumbRemoveButton — double-tone xmark */
+.brt {
+  padding: 0; background: transparent;
+  color: var(--text-on-accent);
+}
+.brt svg { display: block; }
+
+/* ColorSwatchButton — 20pt fill + optional outer accent ring */
+.csb {
+  width: 28px; height: 28px;
+  padding: 0; position: relative;
+  background: transparent; border-radius: 50%;
+}
+.csb__dot {
+  width: 20px; height: 20px; border-radius: 50%;
+  border: 0.5px solid var(--stroke);
+  display: block;
+}
+.csb__ring {
+  position: absolute; inset: 2px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  pointer-events: none;
+}
+
+/* CreateProgramButton — 54×54 accent FAB */
+.cpb {
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  background: var(--accent); color: var(--text-on-accent);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+/* DaysPerWeekButton — 56pt RR12 selection pill */
+.dpw {
+  flex: 1;
+  height: 56px;
+  border-radius: var(--r-md);
+  font-size: 17px; font-weight: 600;
+  background: var(--surface-card);
+  color: var(--text-primary);
+  border: 1px solid var(--stroke);
+}
+.dpw--on {
+  background: var(--accent); color: var(--text-on-accent);
+  border-color: var(--accent);
+}
+
+/* EditorChip — RR8 monospaced compact, idle/active(info) */
+.ech {
+  min-width: 44px;
+  padding: var(--sp-xxs) var(--sp-sm);
+  border-radius: var(--r-sm);
+  font-family: var(--font-mono);
+  font-size: 14px; font-weight: 600;
+  background: color-mix(in srgb, var(--text-primary) 7%, transparent);
+  color: var(--text-primary);
+}
+.ech--on {
+  background: color-mix(in srgb, var(--info) 15%, transparent);
+  color: var(--info);
+}
+
+/* AppleSignInButton — black RR12, white text */
+.asb {
+  width: 100%;
+  padding: 12px var(--sp-md);
+  border-radius: var(--r-md);
+  background: #000; color: #fff;
+  font-size: 16px; font-weight: 600;
+}
+
+/* GymMode pauseCircle — 56pt surfaceCard, accent glyph, shadow */
+.gpc {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--surface-card); color: var(--accent);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.10);
+}
+
+/* GymMode exercise nav arrow — 44×44, textSecondary, no bg */
+.gna { width: 44px; height: 44px; color: var(--text-secondary); background: transparent; }
+.gna--off { opacity: 0.3; }
+
+/* RestPill adjustCapsule — small "-15"/"+15" pill */
+.rac {
+  padding: 7px var(--sp-sm);
+  border-radius: var(--r-pill);
+  background: var(--background); color: #fff;
+  font-size: 16px; font-weight: 600;
+}
+
+/* RestPill playPauseCircle — 36pt background fill */
+.rppc {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--background); color: #fff;
+}

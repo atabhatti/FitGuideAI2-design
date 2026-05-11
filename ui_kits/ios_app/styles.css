@@ -1,0 +1,102 @@
+/* FitGuideAI iOS UI kit — shared visual stylesheet */
+@import url('../../colors_and_type.css');
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #000; color: var(--text-primary); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+button { font: inherit; cursor: pointer; }
+
+.fg-screen {
+  width: 393px; height: 852px;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+  color: var(--text-primary);
+  display: flex; flex-direction: column;
+}
+.fg-statusbar {
+  height: 54px; display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 0 28px 8px; font-size: 15px; font-weight: 600; color: var(--text-primary);
+}
+.fg-topbar {
+  height: 44px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
+}
+.fg-topbar .title { font-size: 17px; font-weight: 700; }
+.fg-topbar .ic {
+  width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.06);
+  border: 1px solid var(--stroke); display: grid; place-items: center; color: var(--text-primary);
+}
+.fg-content { flex: 1; overflow-y: auto; padding: 0 var(--screen-inset); padding-bottom: 96px; }
+.fg-content::-webkit-scrollbar { display: none; }
+
+.fg-tabbar {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 84px; padding-bottom: 24px;
+  background: rgba(5,23,46,0.92);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--stroke);
+  display: flex;
+}
+.fg-tabbar .tab {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  background: transparent; border: none; color: var(--text-tertiary);
+  font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.fg-tabbar .tab.on { color: var(--accent); }
+.fg-tabbar .tab svg { width: 24px; height: 24px; stroke-width: 2; }
+
+.fg-card {
+  background: var(--surface-card); border: 1px solid var(--stroke);
+  border-radius: var(--r-lg); padding: var(--card-padding);
+}
+.fg-card.flat { background: transparent; border-color: var(--hairline); }
+
+.fg-cta {
+  height: 54px; padding: 0 24px;
+  background: var(--accent); color: var(--text-on-accent);
+  border: none; border-radius: 9999px;
+  font-size: 17px; font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  transition: transform 100ms;
+}
+.fg-cta:active { transform: scale(0.97); }
+.fg-cta.secondary {
+  background: transparent; color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.fg-cta.full { width: 100%; }
+
+.fg-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 5px 11px; border-radius: 9999px;
+  font-size: 13px; font-weight: 600;
+  border: 1px solid transparent;
+}
+.fg-pill.up    { background: var(--accent-subtle); color: var(--accent); border-color: var(--accent); }
+.fg-pill.flat  { color: var(--text-secondary); border-color: var(--text-secondary); }
+.fg-pill.down  { background: var(--info-subtle); color: var(--info); border-color: var(--info); }
+.fg-pill.pr    { background: rgba(232,200,74,0.20); color: var(--gold); border-color: var(--gold); }
+.fg-pill.cat   { color: var(--text-primary); border-color: rgba(255,255,255,0.18); font-weight: 500; }
+.fg-pill.cat.on{ background: var(--accent); color: var(--text-on-accent); border-color: var(--accent); font-weight: 600; }
+
+.fg-label-sm { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-secondary); }
+.fg-heading-lg { font-size: 20px; font-weight: 700; }
+.fg-heading-md { font-size: 17px; font-weight: 600; }
+.fg-display-hero { font-family: var(--font-display); font-size: 42px; font-weight: 400; letter-spacing: 0.02em; line-height: 1; }
+.fg-weight-display { font-size: 56px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+
+.fg-section-header { display: flex; justify-content: space-between; align-items: center; margin: 24px 0 12px; }
+.fg-section-header .fg-label-sm { color: var(--text-secondary); }
+
+.fg-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 0; border-bottom: 1px solid var(--hairline);
+}
+.fg-row:last-child { border-bottom: none; }
+
+/* utility */
+.fg-stack { display: flex; flex-direction: column; }
+.fg-stack.sm { gap: 8px; } .fg-stack.md { gap: 12px; } .fg-stack.lg { gap: 16px; } .fg-stack.xl { gap: 20px; }
+.fg-row-flex { display: flex; align-items: center; }
+.fg-row-flex.sm { gap: 8px; } .fg-row-flex.md { gap: 12px; }
+.fg-spacer { flex: 1; }

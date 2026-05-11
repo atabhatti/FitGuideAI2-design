@@ -1,0 +1,303 @@
+/* FitGuideAI button styles — ported 1:1 from Swift DS components.
+   Press feedback uses ScaleButtonStyle (0.97 scale, ease 100ms). */
+
+.fg-btn {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-xs);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--motion-instant) var(--ease-standard),
+              opacity var(--motion-instant) var(--ease-standard);
+}
+.fg-btn:active,
+.fg-btn.is-pressed { transform: scale(0.97); }
+.fg-btn:disabled,
+.fg-btn.is-disabled { opacity: var(--opacity-disabled); cursor: not-allowed; }
+.fg-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============ FGPrimaryButton — capsule, 54pt ============ */
+.fg-primary {
+  width: 100%;
+  height: var(--cta-height);
+  border-radius: var(--r-pill);
+  font-size: var(--type-label-lg-size);
+  font-weight: var(--type-label-lg-weight);
+  padding: 0 var(--sp-lg);
+}
+.fg-primary--accent { background: var(--accent); color: var(--text-on-accent); }
+.fg-primary--info { background: var(--info); color: var(--text-on-accent); }
+.fg-primary--destructive { background: var(--destructive); color: var(--text-on-destructive); }
+
+/* ============ FGSecondaryButton — capsule outline ============ */
+.fg-secondary {
+  width: 100%;
+  height: var(--cta-height);
+  border-radius: var(--r-pill);
+  font-size: var(--type-label-lg-size);
+  font-weight: var(--type-label-lg-weight);
+  padding: 0 var(--sp-lg);
+  border: var(--stroke-standard) solid var(--stroke);
+}
+.fg-secondary--neutral {
+  background: var(--surface-card);
+  color: var(--text-primary);
+  border-color: var(--stroke);
+}
+.fg-secondary--accent {
+  background: transparent;
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+/* ============ FGAuthPrimaryButton — 56pt RR14, UPPERCASE ============ */
+.fg-auth {
+  width: 100%;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 0 var(--sp-lg);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.fg-auth.is-disabled,
+.fg-auth:disabled {
+  background: var(--surface-card);
+  color: var(--text-secondary);
+  box-shadow: none;
+  opacity: 1; /* disabled style is full-fidelity, not faded */
+}
+.fg-auth .glyph-arrow { font-size: 13px; font-weight: 700; }
+
+/* ============ FGGymActionButton — 80pt RR14, 20pt bold ============ */
+.fg-gym {
+  width: 100%;
+  height: 80px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--text-on-accent);
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 var(--sp-lg);
+}
+.fg-gym--compact { height: 56px; }
+.fg-gym.is-disabled,
+.fg-gym:disabled {
+  background: var(--surface-card);
+  color: var(--text-secondary);
+  opacity: 1;
+}
+
+/* ============ FGSocialButton — 50pt RR12 ============ */
+.fg-social {
+  flex: 1;
+  height: 50px;
+  border-radius: var(--r-md);
+  background: var(--surface-card);
+  color: var(--text-primary);
+  border: var(--stroke-standard) solid var(--stroke);
+  font-size: var(--type-label-md-size);
+  font-weight: var(--type-label-md-weight);
+  padding: 0 var(--sp-md);
+}
+
+/* ============ FGTertiaryButton — text only, 44pt min ============ */
+.fg-tertiary {
+  min-height: 44px;
+  padding: var(--sp-xxs) var(--sp-sm);
+  font-size: var(--type-label-md-size);
+  font-weight: var(--type-label-md-weight);
+}
+.fg-tertiary--emphasized { color: var(--accent); }
+.fg-tertiary--quiet { color: var(--text-secondary); }
+
+/* ============ FGTextButton — link style, 15pt ============ */
+.fg-text {
+  font-size: var(--type-body-md-size);
+  font-weight: 400;
+  color: var(--accent);
+  padding: var(--sp-xxs) var(--sp-xxs);
+}
+.fg-text--semibold { font-weight: 600; }
+.fg-text--neutral { color: var(--text-primary); }
+
+/* ============ FGCircleButton — 32pt, V1 Program Editor ============ */
+.fg-circle {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  color: var(--text-secondary);
+}
+.fg-circle svg { width: 13px; height: 13px; }
+.fg-circle--tap { width: 44px; height: 44px; background: transparent; }
+.fg-circle--tap .fg-circle { pointer-events: none; }
+
+/* ============ FGCircleIconButton — 36pt, FGTopBar ============ */
+.fg-circle-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+  color: var(--text-primary);
+}
+.fg-circle-icon svg { width: 17px; height: 17px; }
+.fg-circle-icon--accent { color: var(--accent); }
+
+/* ============ FGCloseChevronButton — 34pt, fullScreenCover dismiss ============ */
+.fg-close-chev {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  border: var(--stroke-standard) solid var(--stroke);
+  color: var(--text-primary);
+}
+.fg-close-chev svg { width: 13px; height: 13px; }
+
+/* ============ FGDashedAddRow — accent dashed border ============ */
+.fg-dashed {
+  width: 100%;
+  padding: var(--sp-sm);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  color: var(--accent);
+  font-size: var(--type-label-md-size);
+  font-weight: 600;
+  background: transparent;
+  /* dashed border simulated to allow precise dash [4] */
+  background-image: repeating-linear-gradient(
+    0deg, transparent, transparent calc(50% - 0.5px),
+    color-mix(in srgb, var(--accent) 25%, transparent) calc(50% - 0.5px),
+    color-mix(in srgb, var(--accent) 25%, transparent) calc(50% + 0.5px),
+    transparent calc(50% + 0.5px));
+  /* Fallback to native dashed for simplicity */
+  background-image: none;
+  border: 1px dashed color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.fg-dashed svg { width: 16px; height: 16px; }
+
+/* ============ AutoProgressionButton — small pill toggle ============ */
+.fg-autoprog {
+  padding: var(--sp-xxs) var(--sp-sm);
+  border-radius: var(--r-md);
+  font-size: var(--type-label-sm-size);
+  font-weight: var(--type-label-sm-weight);
+  letter-spacing: 0.04em;
+  text-transform: none;
+  border: var(--stroke-standard) solid;
+  background: transparent;
+}
+.fg-autoprog[aria-pressed="true"] {
+  color: var(--accent);
+  background: var(--accent-subtle);
+  border-color: color-mix(in srgb, var(--accent) 33%, transparent);
+}
+.fg-autoprog[aria-pressed="false"] {
+  color: var(--text-secondary);
+  border-color: color-mix(in srgb, var(--text-primary) 12%, transparent);
+}
+
+/* ============ Spinner (loading state) ============ */
+.fg-spinner {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: fg-spin 700ms linear infinite;
+}
+@keyframes fg-spin { to { transform: rotate(360deg); } }
+
+/* ============ Artboard chrome ============ */
+.ab {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-xl);
+  gap: var(--sp-md);
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.ab--card { background: var(--surface-card); }
+.ab__title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 0;
+}
+.ab__sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 4px 0 0;
+}
+.ab__row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ab__row--inline {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--sp-md);
+  flex-wrap: wrap;
+}
+.ab__label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+.ab__grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-md);
+}
+.ab__stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-sm);
+  flex: 1;
+}
+.ab__divider {
+  height: 1px;
+  background: var(--hairline);
+  margin: 4px 0;
+}
+.ab__caption {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+
+/* Top-bar mock context (for icon buttons) */
+.mock-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--topbar-height);
+  padding: 0 var(--sp-md);
+  background: var(--background);
+  color: var(--text-primary);
+  border-radius: 6px;
+}
+.mock-topbar__title { font-size: 17px; font-weight: 600; }

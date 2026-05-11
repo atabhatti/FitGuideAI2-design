@@ -1,0 +1,207 @@
+/* FitGuideAI Design System — colors + type tokens
+   Ported from FitGuideAI2 Swift DS (Packages/DesignSystem).
+   Dark mode is the ship default; light values provided as overrides. */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+  /* ============ TYPOGRAPHY ============ */
+  /* SF Pro is the default; Bebas Neue only for displayHero.
+     SF Pro is system-only — falls back to system-ui stack. */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+               system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Bebas Neue", "SF Pro Display", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Role tokens — sizes in px, weights, line-heights */
+  --type-display-hero-family: var(--font-display);
+  --type-display-hero-size: 42px;
+  --type-display-hero-weight: 400;
+  --type-display-hero-tracking: 0.02em;
+
+  --type-display-large-size: 32px;
+  --type-display-large-weight: 700;
+
+  --type-weight-display-size: 56px;
+  --type-weight-display-weight: 700;
+
+  --type-heading-lg-size: 20px;
+  --type-heading-lg-weight: 700;
+  --type-heading-md-size: 17px;
+  --type-heading-md-weight: 600;
+
+  --type-body-lg-size: 17px;
+  --type-body-md-size: 15px;
+  --type-body-sm-size: 14px;
+  --type-body-weight: 400;
+
+  --type-label-lg-size: 16px;
+  --type-label-lg-weight: 600;
+  --type-label-md-size: 14px;
+  --type-label-md-weight: 500;
+  --type-label-sm-size: 11px;
+  --type-label-sm-weight: 600;
+  --type-caption-lg-size: 11px;
+  --type-caption-lg-weight: 400;
+
+  --type-status-pill-size: 13px;
+  --type-status-pill-weight: 600;
+  --type-card-title-size: 17px;
+  --type-card-title-weight: 700;
+  --type-progression-badge-size: 11px;
+  --type-progression-badge-weight: 700;
+  --type-group-header-size: 10px;
+  --type-group-header-weight: 700;
+  --type-timer-size: 20px;
+  --type-timer-weight: 600;
+  --type-timer-xl-size: 72px;
+  --type-timer-xl-weight: 700;
+
+  /* ============ COLOR (DARK = default) ============ */
+  /* Brand intents */
+  --accent: #E8FF47;            /* electric chartreuse — brand signature */
+  --accent-subtle: rgba(232,255,71,0.20);
+  --gold: #E8C84A;
+  --warning: #FF9500;
+  --destructive: #FF3B30;
+
+  /* Surfaces */
+  --background: #05172E;        /* deep navy */
+  --surface-card: #14406B;      /* mid navy */
+  --surface-sheet: #0E2B4A;
+  --stroke: rgba(255,255,255,0.08);
+  --hairline: rgba(255,255,255,0.10);
+
+  /* Text */
+  --text-primary: #F5F5F5;
+  --text-secondary: #9BB5D6;
+  --text-tertiary: #6A8BAA;     /* decorative only — below WCAG AA */
+  --text-on-accent: #0A0A0A;
+  --text-on-gold: #1A1200;
+  --text-on-destructive: #FFFFFF;
+
+  /* Semantic state */
+  --success: #4ADE80;
+  --success-subtle: rgba(74,222,128,0.15);
+  --info: #5B8DF5;
+  --info-subtle: rgba(91,141,245,0.15);
+  --warning-subtle: rgba(255,149,0,0.15);
+  --destructive-subtle: rgba(255,59,48,0.15);
+
+  /* Volume zones (atrophying → overtraining) */
+  --zone-atrophying: #9BB5D6;
+  --zone-maintenance: #5B8DF5;
+  --zone-growth: #4ADE80;
+  --zone-optimal: #E8FF47;
+  --zone-above-optimal: #FF9500;
+  --zone-overtraining: #FF3B30;
+
+  /* Block phases / specialty */
+  --phase-accumulation: #9BB5D6;
+  --phase-intensification: #E8FF47;
+  --phase-peak: #E8C84A;
+  --phase-deload: #4ADE80;
+  --rest: #AF52DE;
+  --superset: #5DCFCF;
+  --circuit: #FF9F4A;
+  --sleep-fair: #FF9500;
+  --sleep-good: #E8FF47;
+  --sleep-excellent: #4ADE80;
+  --volume-warning: #E07040;
+
+  /* Plate / band palette */
+  --plate-red: #E53935;
+  --plate-blue: #1E88E5;
+  --plate-yellow: #FDD835;
+  --plate-green: #43A047;
+  --plate-white: #FFFFFF;
+  --plate-gray: #444444;
+  --band-orange: #FF9500;
+  --band-purple: #AF52DE;
+  --band-teal: #34C759;
+  --band-blue: #007AFF;
+
+  /* ============ SPACING (10-step) ============ */
+  --sp-xxxs: 2px;
+  --sp-xxs: 4px;
+  --sp-xs: 8px;
+  --sp-sm: 12px;
+  --sp-md: 16px;
+  --sp-lg: 20px;
+  --sp-xl: 24px;
+  --sp-xxl: 32px;
+  --sp-xxxl: 48px;
+  --sp-display: 64px;
+
+  /* ============ RADIUS ============ */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-pill: 9999px;
+  /* component-local off-scale */
+  --r-card: 14px;
+  --r-group: 14px;
+
+  /* ============ ELEVATION ============ */
+  --shadow-card: 0 2px 4px rgba(0,0,0,0.10);
+  --shadow-floating: 0 4px 8px rgba(0,0,0,0.30);
+  --shadow-accent-glow: 0 8px 32px rgba(232,255,71,0.40);
+
+  /* ============ MOTION ============ */
+  --motion-instant: 100ms;
+  --motion-fast: 200ms;
+  --motion-standard: 250ms;
+  --motion-slow: 400ms;
+  --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+  /* ============ LAYOUT ============ */
+  --screen-inset: 20px;
+  --card-padding: 16px;
+  --section-gap: 12px;
+  --cta-height: 54px;
+  --tabbar-height: 56px;
+  --topbar-height: 44px;
+  --stroke-hairline: 0.5px;
+  --stroke-standard: 1px;
+  --opacity-disabled: 0.40;
+}
+
+/* Light-mode override (system pref) */
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent: #155A37;
+    --accent-subtle: #EAF7EF;
+    --gold: #B8860B;
+    --warning: #C47A00;
+    --destructive: #CC2222;
+    --background: #F6F7F8;
+    --surface-card: #FFFFFF;
+    --surface-sheet: #F0F1F2;
+    --stroke: #E2E4E7;
+    --hairline: #D5D8DC;
+    --text-primary: #0D1117;
+    --text-secondary: #5A6270;
+    --text-tertiary: #8C95A0;
+    --text-on-accent: #FFFFFF;
+    --success: #155A37;
+    --info: #1859A8;
+    --zone-optimal: #155A37;
+    --phase-intensification: #155A37;
+    --rest: #7C3AED;
+  }
+}
+
+/* Semantic role classes */
+.t-display-hero { font-family: var(--type-display-hero-family); font-size: var(--type-display-hero-size); font-weight: var(--type-display-hero-weight); letter-spacing: var(--type-display-hero-tracking); }
+.t-display-lg { font-size: var(--type-display-large-size); font-weight: var(--type-display-large-weight); }
+.t-heading-lg { font-size: var(--type-heading-lg-size); font-weight: var(--type-heading-lg-weight); }
+.t-heading-md { font-size: var(--type-heading-md-size); font-weight: var(--type-heading-md-weight); }
+.t-body-lg { font-size: var(--type-body-lg-size); font-weight: 400; }
+.t-body-md { font-size: var(--type-body-md-size); font-weight: 400; }
+.t-body-sm { font-size: var(--type-body-sm-size); font-weight: 400; }
+.t-label-lg { font-size: var(--type-label-lg-size); font-weight: var(--type-label-lg-weight); }
+.t-label-md { font-size: var(--type-label-md-size); font-weight: var(--type-label-md-weight); }
+.t-label-sm { font-size: var(--type-label-sm-size); font-weight: var(--type-label-sm-weight); text-transform: uppercase; letter-spacing: 0.04em; }
+.t-card-title { font-size: var(--type-card-title-size); font-weight: var(--type-card-title-weight); }

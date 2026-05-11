@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
+  <defs>
+    <radialGradient id="halo2" cx="40" cy="40" r="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E8FF47" stop-opacity="0.35"></stop>
+      <stop offset="100%" stop-color="#E8FF47" stop-opacity="0"></stop>
+    </radialGradient>
+  </defs>
+  <rect width="320" height="80" fill="#05172E"></rect>
+  <rect x="10" y="10" width="60" height="60" rx="14" fill="url(#halo2)"></rect>
+  <rect x="14" y="14" width="52" height="52" rx="12" fill="#05172E" stroke="rgba(255,255,255,0.12)"></rect>
+  <path d="M44 22 L30 46 L40 46 L36 58 L52 38 L42 38 Z" fill="#E8FF47"></path>
+  <text x="86" y="54" font-family="Bebas Neue, Impact, sans-serif" font-size="38" letter-spacing="1" fill="#F5F5F5">FitGuide<tspan fill="#E8FF47">AI</tspan></text>
+</svg>

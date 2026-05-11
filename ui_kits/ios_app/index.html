@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FitGuideAI · iOS UI Kit</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { background: #0a0a0a; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+  .device {
+    width: 393px; height: 852px;
+    border-radius: 54px; padding: 12px;
+    background: #1a1a1a;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.08);
+    position: relative;
+  }
+  .device-inner {
+    width: 100%; height: 100%; border-radius: 44px; overflow: hidden;
+    background: var(--background);
+    position: relative;
+  }
+  .notch {
+    position: absolute; top: 22px; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 32px; background: #000; border-radius: 9999px;
+    z-index: 100; pointer-events: none;
+  }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="device">
+    <div class="notch"></div>
+    <div class="device-inner" id="device-inner">
+      <div id="root" style="height:100%"></div>
+    </div>
+  </div>
+
+<script type="text/babel" src="Components.jsx"></script>
+<script type="text/babel" src="WorkoutTab.jsx"></script>
+<script type="text/babel" src="ProgramsTab.jsx"></script>
+<script type="text/babel" src="ProgressTab.jsx"></script>
+<script type="text/babel" src="ProfileTab.jsx"></script>
+<script type="text/babel" src="ActiveWorkout.jsx"></script>
+<script type="text/babel">
+const { useState } = React;
+
+function App() {
+  const [tab, setTab] = useState('workout');
+  const [aw, setAW] = useState(false);
+
+  if (aw) {
+    return <ActiveWorkout onExit={() => setAW(false)} onFinish={() => setAW(false)} />;
+  }
+
+  const TitleByTab = { workout: 'Workout', programs: 'Programs', progress: 'Progress', profile: 'Profile' };
+
+  return (
+    <div className="fg-screen" data-screen-label={tab}>
+      <StatusBar/>
+      <TopBar
+        left={<button className="ic"><Icon name="menu" size={18}/></button>}
+        title={TitleByTab[tab]}
+        right={<button className="ic"><Icon name="bell" size={18}/></button>}
+      />
+      <div className="fg-content">
+        {tab === 'workout'  && <WorkoutTab onStartWorkout={() => setAW(true)}/>}
+        {tab === 'programs' && <ProgramsTab/>}
+        {tab === 'progress' && <ProgressTab/>}
+        {tab === 'profile'  && <ProfileTab/>}
+      </div>
+      <TabBar active={tab} onChange={setTab}/>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

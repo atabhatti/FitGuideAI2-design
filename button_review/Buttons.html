@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>FitGuideAI · Buttons</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<link rel="stylesheet" href="buttons.css" />
+<link rel="stylesheet" href="buttons-feature.css" />
+<style>
+  html, body, #root {
+    margin: 0;
+    height: 100%;
+    background: #0A1A2E;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+  }
+  /* Explicit theme override — lets the Tweaks panel flip between dark/light
+     even when the OS pref disagrees. */
+  html[data-theme="light"] {
+    color-scheme: light;
+    --accent: #155A37;
+    --accent-subtle: #EAF7EF;
+    --gold: #B8860B;
+    --warning: #C47A00;
+    --destructive: #CC2222;
+    --background: #F6F7F8;
+    --surface-card: #FFFFFF;
+    --surface-sheet: #F0F1F2;
+    --stroke: #E2E4E7;
+    --hairline: #D5D8DC;
+    --text-primary: #0D1117;
+    --text-secondary: #5A6270;
+    --text-tertiary: #8C95A0;
+    --text-on-accent: #FFFFFF;
+    --info: #1859A8;
+  }
+  html[data-theme="dark"] {
+    color-scheme: dark;
+    --accent: #E8FF47;
+    --accent-subtle: rgba(232,255,71,0.20);
+    --warning: #FF9500;
+    --destructive: #FF3B30;
+    --background: #05172E;
+    --surface-card: #14406B;
+    --surface-sheet: #0E2B4A;
+    --stroke: rgba(255,255,255,0.08);
+    --hairline: rgba(255,255,255,0.10);
+    --text-primary: #F5F5F5;
+    --text-secondary: #9BB5D6;
+    --text-tertiary: #6A8BAA;
+    --text-on-accent: #0A0A0A;
+    --info: #5B8DF5;
+  }
+
+  /* Global force-state overrides (Tweaks panel) */
+  body.show-pressed .fg-btn { transform: scale(0.97); }
+  body.show-disabled .fg-btn { opacity: var(--opacity-disabled); pointer-events: none; }
+  /* Auth/Gym have non-fade disabled treatments — emulate them when forced */
+  body.show-disabled .fg-auth {
+    background: var(--surface-card);
+    color: var(--text-secondary);
+    box-shadow: none;
+    opacity: 1;
+  }
+  body.show-disabled .fg-gym {
+    background: var(--surface-card);
+    color: var(--text-secondary);
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="buttons.jsx"></script>
+<script type="text/babel" src="buttons-feature.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
